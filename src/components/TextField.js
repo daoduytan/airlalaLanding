@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 
 const FormGroup = styled.div`
@@ -28,34 +28,37 @@ const FormGroup = styled.div`
             border-color: #04ce84;
         }
     }
-`
 
-class TextField extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            value: this.props.value
+    &.error {
+        input {
+            border-color: #e64646;
         }
     }
+`
 
-    onChange = (e) => {
-        this.setState({value : e.target.value});
-        this.props.onChange(e.target.value, this.props.name)
-    }
-    render() {
-        return (
-            <FormGroup>
-                <label>{this.props.label}</label>
-                <input 
-                    value={this.state.value}
-                    onChange={this.onChange}
-                    type={this.props.type} 
-                    name={this.props.name}
-                    placeholder={this.props.placeholder} 
-                />
-            </FormGroup>
-        );
-    }
+const Error = styled.div`
+    font-size: 12px;
+    background: #e64646;
+    color: #fff;
+    padding: 5px;
+    transform: translateY(-2px);
+    border-radius: 0 0 3px 3px;
+`
+
+const TextField = ({value, label, onChange, type, name, placeholder, error}) => {
+    return (
+        <FormGroup className={error && 'error'}>
+            <label>{label}</label>
+            <input 
+                value={value}
+                onChange={onChange}
+                type={type} 
+                name={name}
+                placeholder={placeholder} 
+            />
+            {error && <Error>{error}</Error>}
+        </FormGroup>
+    )
 }
 
 export default TextField;

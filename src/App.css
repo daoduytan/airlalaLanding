@@ -1,9 +1,8 @@
 @import "~slick-carousel/slick/slick.css";
-
-
 * {
   box-sizing: border-box;
 }
+
 a {
   text-decoration: none;
   color: #333;
@@ -21,14 +20,16 @@ a {
 
 .slick-dots li {
   display: inline-block;
-  width: 10px; height: 10px;
-  background: rgba(255,255,255, .7);
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, .7);
   margin: 0 5px;
   border-radius: 50%;
 }
 
 .slick-dots li button {
-  width: 10px; height: 10px;
+  width: 10px;
+  height: 10px;
   opacity: 0;
 }
 
@@ -41,4 +42,3 @@ a {
     width: 100%;
   }
 }
-
