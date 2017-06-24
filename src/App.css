@@ -1,0 +1,44 @@
+@import "~slick-carousel/slick/slick.css";
+
+
+* {
+  box-sizing: border-box;
+}
+a {
+  text-decoration: none;
+  color: #333;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.slick-dots {
+  list-style: none;
+  padding: 0;
+  margin-top: 80px;
+}
+
+.slick-dots li {
+  display: inline-block;
+  width: 10px; height: 10px;
+  background: rgba(255,255,255, .7);
+  margin: 0 5px;
+  border-radius: 50%;
+}
+
+.slick-dots li button {
+  width: 10px; height: 10px;
+  opacity: 0;
+}
+
+.slick-dots li.slick-active {
+  background: #fd6f1a;
+}
+
+@media (max-width: 767px) {
+  .container {
+    width: 100%;
+  }
+}
+
